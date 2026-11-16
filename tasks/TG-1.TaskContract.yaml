@@ -1,0 +1,13 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: TG-1
+spec:
+  goal: intent.yaml pins stack-tectonic 0.19.1, whose smoke wrapper cannot fail on a SIGPIPE from echo | grep -q on a page over 64 KiB.
+  affects:
+    - intent.yaml
+    - tasks/TG-1.TaskContract.yaml
+  doneWhen:
+    - intent.yaml pins oci://ghcr.io/sourceplane/stack-tectonic:0.19.1
+    - the merge's deploy to stage and prod passes its smoke
+  gates: []
